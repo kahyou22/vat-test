@@ -2,8 +2,8 @@ const total = document.querySelector("#total");
 const supply = document.querySelector("#supply");
 const vat = document.querySelector("#vat");
 
-const total2supply = (total) => Math.round(total / 1.1);
-const total2vat = (total) => Math.round(total / 11);
+const total2supply = (total) => total - total2vat(total);
+const total2vat = (total) => Math.floor(total / 11);
 
 const calculate = () => {
   const totalValue = parseFloat(total.value) || 0;
